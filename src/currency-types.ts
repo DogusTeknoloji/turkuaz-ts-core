@@ -1,0 +1,22 @@
+export enum CurrencyTypes {
+    TRY = 1,
+    USD = 2,
+    AUD = 3,
+    DKK = 4,
+    EUR = 5,
+    GBP = 6,
+    CHF = 7,
+    SEK = 8,
+    CAD = 9,
+    KWD = 10,
+    NOK = 11,
+    SAR = 12,
+    JPY = 13,
+    BGN = 14,
+    RON = 15,
+    RUB = 16,
+    IRR = 17,
+    CNY = 18,
+    PKR = 19,
+  }
+  
