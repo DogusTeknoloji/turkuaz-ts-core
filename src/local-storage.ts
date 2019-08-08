@@ -1,4 +1,4 @@
-import * as debugConsole from './dt-debug-console';
+import * as debugConsole from './turkuaz-debug-console';
 
 /**
  * Check if localStorage is supported                       const isSupported: boolean

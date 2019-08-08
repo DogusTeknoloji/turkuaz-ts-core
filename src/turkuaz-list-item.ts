@@ -1,13 +1,13 @@
 import { ODataQuery } from 'yuya.ts.odata-client';
-import { ODataResponse } from './dt-types';
-import { DTQueueService } from './dt-queue-service';
+import { ODataResponse } from './turkuaz-types';
+import { TurkuazQueueService } from './turkuaz-queue-service';
 import { TranslateResult } from 'vue-i18n';
 import { LocalizableString } from './localizable-string';
 
-export class DTListItem<T = string> {
+export class TurkuazListItem<T = string> {
   public static fillByOData: (
-    resultRef: DTListItem[],
-    queueService: DTQueueService,
+    resultRef: TurkuazListItem[],
+    queueService: TurkuazQueueService,
     serviceName: string,
     valueFieldName: string,
     textFieldName: string,
@@ -22,9 +22,9 @@ export class DTListItem<T = string> {
   }
 }
 
-DTListItem.fillByOData = (
-  refResult: DTListItem[],
-  queueService: DTQueueService,
+TurkuazListItem.fillByOData = (
+  refResult: TurkuazListItem[],
+  queueService: TurkuazQueueService,
   serviceName: string,
   valueFieldName: string,
   textFieldName: string,
@@ -41,7 +41,7 @@ DTListItem.fillByOData = (
   }
 
   query.q()
-    .then((response: ODataResponse<DTListItem>) => {
+    .then((response: ODataResponse<TurkuazListItem>) => {
       if (response.value) {
         refResult.length = 0;
         response.value.forEach((item: any) => refResult.push({

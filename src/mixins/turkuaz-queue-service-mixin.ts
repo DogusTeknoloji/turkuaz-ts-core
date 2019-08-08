@@ -1,13 +1,13 @@
 import Vue from 'vue';
 import { Inject, Component } from 'vue-property-decorator';
-import { DTQueueService } from '../dt-queue-service';
+import { TurkuazQueueService } from '../turkuaz-queue-service';
 
 @Component
-export class DTQueueServiceMixin extends Vue {
+export class TurkuazQueueServiceMixin extends Vue {
   public loading: boolean = false;
 
-  @Inject({ default: () => new DTQueueService() })
-  public queueService!: DTQueueService;
+  @Inject({ default: () => new TurkuazQueueService() })
+  public queueService!: TurkuazQueueService;
 
   public created() {
     this.loading = this.queueService.isBusy;

@@ -14,7 +14,7 @@ import { setMomentLanguage } from './moment-setup';
 import axios from 'axios';
 import moment from 'moment';
 
-import DTApplication from './dt-application-instance';
+import DTApplication from './turkuaz-application-instance';
 import { CurrencyTypes } from './currency-types';
 
 function returnDateWithFormat(value: any, format: string): string {

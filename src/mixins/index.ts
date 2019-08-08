@@ -1,3 +1,3 @@
-export { DTQueueServiceMixin } from './dt-queue-service-mixin';
-export { DTLocalizationServiceMixin } from './dt-localization-service-mixin';
-export { DTEmitInputMixin } from './dt-emit-input-mixin';
+export { TurkuazQueueServiceMixin } from './turkuaz-queue-service-mixin';
+export { TurkuazLocalizationServiceMixin } from './turkuaz-localization-service-mixin';
+export { TurkuazEmitInputMixin } from './turkuaz-emit-input-mixin';

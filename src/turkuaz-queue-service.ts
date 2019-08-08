@@ -1,6 +1,6 @@
 import Vue from 'vue';
 
-export class DTQueueService extends Vue {
+export class TurkuazQueueService extends Vue {
   public isBusy: boolean = false;
 
   private sequence = 0;

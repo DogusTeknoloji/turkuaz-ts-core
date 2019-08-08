@@ -1,5 +1,5 @@
 import _ from 'lodash';
-import DTApplication from './dt-application-instance';
+import DTApplication from './turkuaz-application-instance';
 
 const i18n = DTApplication.i18n!;
 
