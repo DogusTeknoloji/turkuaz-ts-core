@@ -6,7 +6,8 @@
   "types": "dist/index.d.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "prepare": "tsc"
+    "prepare": "tsc",
+    "build": "tsc"
   },
   "keywords": [],
   "author": "",
@@ -21,6 +22,7 @@
     "yuya.ts.odata-client": "^1.1.6"
   },
   "devDependencies": {
-    "@types/lodash": "^4.14.136"
+    "@types/lodash": "^4.14.136",
+    "typescript": "^3.5.3"
   }
 }
