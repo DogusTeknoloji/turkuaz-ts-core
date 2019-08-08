@@ -19,3 +19,4 @@ export { TurkuazQueueService } from './turkuaz-queue-service';
 export { TurkuazQueueServiceMixin, TurkuazLocalizationServiceMixin, TurkuazEmitInputMixin } from './mixins';
 
 export * from './kebab-case';
+export * from './moment-setup';
