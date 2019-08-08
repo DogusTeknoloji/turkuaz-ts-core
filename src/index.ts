@@ -20,3 +20,4 @@ export { TurkuazQueueServiceMixin, TurkuazLocalizationServiceMixin, TurkuazEmitI
 
 export * from './kebab-case';
 export * from './moment-setup';
+export { IKeyValuePair } from './key-value-pair';
