@@ -26,30 +26,28 @@ function returnDateWithFormat(value: any, format: string): string {
   return String();
 }
 
-const i18n = DTApplication.i18n!;
-
 export function setI18nLanguage(lang: string): string {
-  i18n.locale = lang;
+  DTApplication.i18n!.locale = lang;
   axios.defaults.headers.common['Accept-Language'] = lang;
   document.querySelector('html')!.setAttribute('lang', lang);
-  setMomentLanguage(i18n);
+  setMomentLanguage(DTApplication.i18n!);
   return lang;
 }
 
 export function translate(value: string): string {
-  return i18n.t(value).toString();
+  return DTApplication.i18n!.t(value).toString();
 }
 Vue.prototype.$translate = translate;
 
 export function translateArray(value: any[]): string[] {
-  return value.map((v) => i18n.t(v).toString());
+  return value.map((v) => DTApplication.i18n!.t(v).toString());
 }
 
 export function numberFormatter(value: any): string {
   if (!value) { return String(); }
   if (isNumber(value)) {
     const v: number = value;
-    return v.toLocaleString(i18n.locale);
+    return v.toLocaleString(DTApplication.i18n!.locale);
   }
   return value.toString();
 }
@@ -63,15 +61,19 @@ export function dateTimeFormatter(value: any) {
 }
 
 export function yesNoFormatter(value: any): string {
-  return value ? i18n.t('trkz.yes').toString() : i18n.t('trkz.no').toString();
+  return value 
+    ? DTApplication.i18n!.t('trkz.yes').toString() 
+    : DTApplication.i18n!.t('trkz.no').toString();
 }
 
 export function onOffFormatter(value: any): string {
-  return value ? i18n.t('trkz.on').toString() : i18n.t('trkz.off').toString();
+  return value 
+    ? DTApplication.i18n!.t('trkz.on').toString() 
+    : DTApplication.i18n!.t('trkz.off').toString();
 }
 
 export function currencyFormatter(value: number, currency: CurrencyTypes): string {
-  return i18n.n(value, 'currency', getCultureName(currency));
+  return DTApplication.i18n!.n(value, 'currency', getCultureName(currency));
 }
 
 function getCultureName(currency: CurrencyTypes): string {
