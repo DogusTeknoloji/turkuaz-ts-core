@@ -14,7 +14,7 @@ import { setMomentLanguage } from './moment-setup';
 import axios from 'axios';
 import moment from 'moment';
 
-import DTApplication from './turkuaz-application-instance';
+import TurkuazApplication from './turkuaz-application-instance';
 import { CurrencyTypes } from './currency-types';
 
 function returnDateWithFormat(value: any, format: string): string {
@@ -27,27 +27,27 @@ function returnDateWithFormat(value: any, format: string): string {
 }
 
 export function setI18nLanguage(lang: string): string {
-  DTApplication.i18n!.locale = lang;
+  TurkuazApplication.i18n!.locale = lang;
   axios.defaults.headers.common['Accept-Language'] = lang;
   document.querySelector('html')!.setAttribute('lang', lang);
-  setMomentLanguage(DTApplication.i18n!);
+  setMomentLanguage(TurkuazApplication.i18n!);
   return lang;
 }
 
 export function translate(value: string): string {
-  return DTApplication.i18n!.t(value).toString();
+  return value.startsWith('`') ? value.substring(1) : TurkuazApplication.i18n!.t(value).toString();
 }
 Vue.prototype.$translate = translate;
 
 export function translateArray(value: any[]): string[] {
-  return value.map((v) => DTApplication.i18n!.t(v).toString());
+  return value.map((v) => translate(v));
 }
 
 export function numberFormatter(value: any): string {
   if (!value) { return String(); }
   if (isNumber(value)) {
     const v: number = value;
-    return v.toLocaleString(DTApplication.i18n!.locale);
+    return v.toLocaleString(TurkuazApplication.i18n!.locale);
   }
   return value.toString();
 }
@@ -61,19 +61,19 @@ export function dateTimeFormatter(value: any) {
 }
 
 export function yesNoFormatter(value: any): string {
-  return value 
-    ? DTApplication.i18n!.t('trkz.yes').toString() 
-    : DTApplication.i18n!.t('trkz.no').toString();
+  return value
+    ? TurkuazApplication.i18n!.t('trkz.yes').toString()
+    : TurkuazApplication.i18n!.t('trkz.no').toString();
 }
 
 export function onOffFormatter(value: any): string {
-  return value 
-    ? DTApplication.i18n!.t('trkz.on').toString() 
-    : DTApplication.i18n!.t('trkz.off').toString();
+  return value
+    ? TurkuazApplication.i18n!.t('trkz.on').toString()
+    : TurkuazApplication.i18n!.t('trkz.off').toString();
 }
 
 export function currencyFormatter(value: number, currency: CurrencyTypes): string {
-  return DTApplication.i18n!.n(value, 'currency', getCultureName(currency));
+  return TurkuazApplication.i18n!.n(value, 'currency', getCultureName(currency));
 }
 
 function getCultureName(currency: CurrencyTypes): string {
@@ -94,4 +94,3 @@ Vue.filter('date', dateFormatter);
 Vue.filter('datetime', dateTimeFormatter);
 Vue.filter('yesNo', yesNoFormatter);
 Vue.filter('onOff', onOffFormatter);
-
