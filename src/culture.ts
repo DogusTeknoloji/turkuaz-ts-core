@@ -34,7 +34,8 @@ export function setI18nLanguage(lang: string): string {
   return lang;
 }
 
-export function translate(value: string): string {
+export function translate(value?: string | null): string {
+  if(value === undefined || value === null) { return String(); }
   return DTApplication.i18n!.t(value).toString();
 }
 Vue.prototype.$translate = translate;
