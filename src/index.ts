@@ -23,4 +23,3 @@ export * from './moment-setup';
 export { IKeyValuePair } from './key-value-pair';
 
 export * from './security';
-export * from './auth-helper';
