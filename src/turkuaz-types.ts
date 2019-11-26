@@ -15,7 +15,7 @@ export interface IError {
 
 export interface IResult<T = never> {
   error?: IError;
-  success?: boolean;
+  isSuccess?: boolean;
   value?: T;
 }
 
