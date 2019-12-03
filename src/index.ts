@@ -24,5 +24,6 @@ export {
 export * from './kebab-case';
 export * from './moment-setup';
 export { IKeyValuePair } from './key-value-pair';
+export { IKeyTextPair } from './key-text-pair';
 
 export * from './security';
