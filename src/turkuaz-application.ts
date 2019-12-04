@@ -1,6 +1,6 @@
 import Vue from "vue";
 import VueI18n from "vue-i18n";
-import { ITurkuazApplication, TurkuazLocalizationService, TurkuazQueueService, TurkuazMessageService } from ".";
+import { TurkuazLocalizationService, TurkuazQueueService, TurkuazMessageService } from ".";
 
 export interface ITurkuazApplication {
     [key: string]: any;
