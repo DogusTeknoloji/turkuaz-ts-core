@@ -1,6 +1,6 @@
 {
   "name": "turkuaz-ts-core",
-  "version": "1.1.19",
+  "version": "1.1.20",
   "description": "",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -12,7 +12,6 @@
   "author": "Dogus Teknoloji Turkuaz Team",
   "license": "ISC",
   "dependencies": {
-    "deprecated-decorator": "^0.1.6",
     "lodash": "^4.17.15",
     "moment": "^2.24.0",
     "rimraf": "^3.0.0",
