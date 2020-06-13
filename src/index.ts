@@ -27,3 +27,5 @@ export { IKeyValuePair } from './key-value-pair';
 export { IKeyTextPair } from './key-text-pair';
 
 export * from './security';
+
+export { addResource } from './resources';
