@@ -29,3 +29,4 @@ export { IKeyTextPair } from './key-text-pair';
 export * from './security';
 
 export { addResource } from './resources';
+export { Languages } from './languages';
