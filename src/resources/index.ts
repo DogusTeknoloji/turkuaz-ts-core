@@ -7,5 +7,7 @@ addResource(Languages.Turkish, tr);
 addResource(Languages.Turkish, en);
 
 export function addResource(lang: Languages, jsonResource: Record<string, any>) {
-  TurkuazApplication.i18n!.messages[lang] = { ...jsonResource }
+  if (!!TurkuazApplication.i18n) {
+    TurkuazApplication.i18n!.messages[lang] = { ...jsonResource }
+  }
 }
