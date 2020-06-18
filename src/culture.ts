@@ -61,6 +61,10 @@ export function dateTimeFormatter(value: any) {
   returnDateWithFormat(value, 'L LTS');
 }
 
+export function dateFormatterForDatePicker(value: any) {
+  return returnDateWithFormat(value, 'YYYY-MM-DD');
+}
+
 export function yesNoFormatter(value: any): string {
   return value
     ? TurkuazApplication.i18n!.t('trkz.yes').toString()
@@ -92,6 +96,7 @@ Vue.filter('translate', translate);
 Vue.filter('translateArray', translateArray);
 Vue.filter('number', numberFormatter);
 Vue.filter('date', dateFormatter);
+Vue.filter('dateForDatePicker', dateFormatterForDatePicker);
 Vue.filter('datetime', dateTimeFormatter);
 Vue.filter('yesNo', yesNoFormatter);
 Vue.filter('onOff', onOffFormatter);
