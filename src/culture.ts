@@ -54,11 +54,11 @@ export function numberFormatter(value: any): string {
 }
 
 export function dateFormatter(value: any) {
-  returnDateWithFormat(value, 'L');
+  return returnDateWithFormat(value, 'L');
 }
 
 export function dateTimeFormatter(value: any) {
-  returnDateWithFormat(value, 'L LTS');
+  return returnDateWithFormat(value, 'L LTS');
 }
 
 export function dateFormatterForDatePicker(value: any) {
