@@ -1,6 +1,6 @@
 {
   "name": "turkuaz-ts-core",
-  "version": "1.1.28",
+  "version": "1.1.29",
   "description": "",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -12,16 +12,17 @@
   "author": "Dogus Teknoloji Turkuaz Team",
   "license": "ISC",
   "dependencies": {
-    "lodash": "^4.17.15",
-    "moment": "^2.27.0",
-    "rimraf": "^3.0.2",
-    "vue": "^2.6.11",
-    "vue-i18n": "^8.18.2",
-    "vue-property-decorator": "^8.5.1",
-    "yuya.ts.odata-client": "^1.1.9"
+    "@types/lodash": "4.14.160",
+    "lodash": "4.17.20",
+    "moment": "2.27.0",
+    "vue": "2.6.12",
+    "vue-i18n": "8.21.0",
+    "vue-class-component": "7.2.5",
+    "vue-property-decorator": "9.0.0",
+    "yuya.ts.odata-client": "1.1.9"
   },
   "devDependencies": {
-    "@types/lodash": "^4.14.157",
-    "typescript": "^3.9.6"
+    "rimraf": "3.0.2",
+    "typescript": "4.0.2"
   }
 }
