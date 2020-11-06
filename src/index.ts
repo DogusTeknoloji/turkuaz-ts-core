@@ -30,3 +30,5 @@ export * from './security';
 
 export { addResource } from './resources';
 export { Languages } from './languages';
+
+export { RootState } from './stores';
