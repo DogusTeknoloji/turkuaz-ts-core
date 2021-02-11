@@ -41,13 +41,3 @@ export { addResource } from './resources';
 export { Languages } from './languages';
 
 export { RootState } from './stores';
-
-declare module 'vue/types/vnode' {
-  export interface VNodeData {
-    model?: {
-      callback: (v: any) => void;
-      expression: string;
-      value: any;
-    };
-  }
-}
