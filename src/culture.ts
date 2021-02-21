@@ -1,21 +1,14 @@
 import Vue from 'vue';
 import VueI18n from 'vue-i18n';
 import { isNumber, isDate } from 'lodash';
-
-declare module 'vue/types/vue' {
-  interface Vue {
-    $translate: (value: string) => string;
-  }
-}
-
-Vue.use(VueI18n);
-
 import { setMomentLanguage } from './moment-setup';
 import axios from 'axios';
 import moment from 'moment';
 
 import TurkuazApplication from './turkuaz-application-instance';
 import { CurrencyTypes } from './currency-types';
+
+Vue.use(VueI18n);
 
 function returnDateWithFormat(value: any, format: string): string {
   if (!value) { return String(); }

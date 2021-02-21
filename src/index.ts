@@ -12,6 +12,8 @@ export {
 
 export { ITurkuazApplication } from './turkuaz-application';
 import TurkuazApplication from './turkuaz-application-instance';
+import VueI18n from 'vue-i18n';
+import { Bus } from './bus';
 export { CurrencyTypes } from './currency-types';
 
 export { LocalizableString } from './localizable-string';
@@ -41,3 +43,19 @@ export { addResource } from './resources';
 export { Languages } from './languages';
 
 export { RootState } from './stores';
+
+export { Bus } from './bus';
+
+declare module 'vue/types/vue' {
+  interface Vue {
+    $translate: (value: string) => string;
+  }
+}
+
+declare module 'vue/types/vue' {
+  interface VueConstructor {
+    $configs: any;
+    i18n: VueI18n;
+    $bus: Bus<any>;
+  }
+}

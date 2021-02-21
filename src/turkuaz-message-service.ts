@@ -42,7 +42,7 @@ export class TurkuazMessageService extends Vue {
         return 'background';
     }
   }
-  
+
   public getIcon(type?: UserMessageType | null): string {
     if (type === undefined || type === null) { return ''; }
     switch (type) {
