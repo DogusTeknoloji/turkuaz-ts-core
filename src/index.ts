@@ -1,3 +1,4 @@
+import _Vue from 'vue';
 import * as DebugConsole from './turkuaz-debug-console';
 import * as LocalStorage from './local-storage';
 import * as StandartValidations from './standart-validations';
@@ -14,6 +15,8 @@ export { ITurkuazApplication } from './turkuaz-application';
 import TurkuazApplication from './turkuaz-application-instance';
 import VueI18n from 'vue-i18n';
 import { Bus } from './bus';
+import { UserOptions } from './user-options';
+import TurkuazCorePluginOptions from './turkuaz-core-plugin-options';
 export { CurrencyTypes } from './currency-types';
 
 export { LocalizableString } from './localizable-string';
@@ -45,6 +48,15 @@ export { Languages } from './languages';
 export { RootState } from './stores';
 
 export { Bus } from './bus';
+export { UserOptions }
+
+export function TurkuazCorePlugin<T extends UserOptions>(
+  Vue: typeof _Vue,
+  options: TurkuazCorePluginOptions<T>,
+) {
+  TurkuazApplication.bus = new Bus<T>();
+  TurkuazApplication.i18n = options.i18n;
+}
 
 declare module 'vue/types/vue' {
   interface Vue {
@@ -56,6 +68,5 @@ declare module 'vue/types/vue' {
   interface VueConstructor {
     $configs: any;
     i18n: VueI18n;
-    $bus: Bus<any>;
   }
 }

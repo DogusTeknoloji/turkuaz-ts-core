@@ -65,18 +65,14 @@ export interface IToastMessageManager {
   message?: IUserMessage | null;
 }
 
-export interface IUserOptions {
-  isDark: boolean;
-  locale: string;
-}
-
-export class UserOptions implements IUserOptions {
-  isDark: boolean = false;
-  locale: string = 'tr';
-}
-
 export type LocaleMessage = string | LocaleMessageObject | LocaleMessageArray;
-export interface LocaleMessageObject { [key: string]: LocaleMessage; }
-export interface LocaleMessageArray { [index: number]: LocaleMessage; }
-export interface LocaleMessages { [key: string]: LocaleMessageObject; }
+export interface LocaleMessageObject {
+  [key: string]: LocaleMessage;
+}
+export interface LocaleMessageArray {
+  [index: number]: LocaleMessage;
+}
+export interface LocaleMessages {
+  [key: string]: LocaleMessageObject;
+}
 export type TranslateResult = string | LocaleMessages;
