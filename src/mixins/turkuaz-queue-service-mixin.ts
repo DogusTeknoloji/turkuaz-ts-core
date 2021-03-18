@@ -1,13 +1,15 @@
 import Vue from 'vue';
 import { Inject, Component } from 'vue-property-decorator';
+import { TurkuazApplication } from '..';
 import { TurkuazQueueService } from '../turkuaz-queue-service';
 
 @Component
 export class TurkuazQueueServiceMixin extends Vue {
-  public loading: boolean = false;
 
   @Inject({ default: () => new TurkuazQueueService() })
   public queueService!: TurkuazQueueService;
+
+  public loading: boolean = false;
 
   public created() {
     this.loading = this.queueService.isBusy;
@@ -17,7 +19,9 @@ export class TurkuazQueueServiceMixin extends Vue {
   }
 
   public runWithQueueService(func: () => void) {
-    if (!func) { return; }
+    if (!func) {
+      return;
+    }
     const qs = this.queueService.add();
     try {
       func();
@@ -27,7 +31,9 @@ export class TurkuazQueueServiceMixin extends Vue {
   }
 
   public async runWithQueueServiceAsync(func: () => Promise<any>) {
-    if (!func) { return; }
+    if (!func) {
+      return;
+    }
     const qs = this.queueService.add();
     try {
       await func();

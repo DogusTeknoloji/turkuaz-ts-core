@@ -6,17 +6,18 @@ import {
   TurkuazMessageService,
   Bus,
 } from '.';
-import { UserOptions } from './user-options';
 
-class TurkuazApplication<T extends UserOptions>
-  implements ITurkuazApplication<T> {
+class TurkuazApplication
+  implements ITurkuazApplication {
   [key: string]: any;
 
   public i18n: VueI18n | null = null;
-  public bus: Bus<T> | null = null;
+  public bus: Bus | null = null;
   public localizationService: TurkuazLocalizationService | null = null;
   public queueService: TurkuazQueueService | null = null;
   public messageService: TurkuazMessageService | null = null;
 }
 
-export default new TurkuazApplication<any>();
+const turkuazApplication: TurkuazApplication = new TurkuazApplication();
+
+export default turkuazApplication;

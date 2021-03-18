@@ -11,10 +11,10 @@ import {
   IUserMessage,
   UserMessageType,
 } from './turkuaz-types';
-import { UserOptions } from './user-options';
+import { IUserOptions, UserOptions } from './user-options';
 
 @Component
-export class Bus<T extends UserOptions> extends Vue {
+export class Bus extends Vue {
   public queueService = new TurkuazQueueService();
   public localizationService = new TurkuazLocalizationService();
   public messageService = new TurkuazMessageService();
@@ -31,7 +31,7 @@ export class Bus<T extends UserOptions> extends Vue {
   }
 
   public userMessages: IUserMessage[] = new Array<IUserMessage>();
-  public userOptions: T = new UserOptions() as T;
+  public userOptions: IUserOptions = new UserOptions();
 
   private created() {
     this.setPageTitle();

@@ -2,6 +2,12 @@ import _ from 'lodash';
 import { LocalStorage } from '.';
 
 const userOptionsName = 'UserOptions';
+
+export interface IUserOptions {
+  isDark: boolean;
+  locale: string;
+}
+
 export class UserOptions {
   protected isDarkInternal: boolean | null = null;
   protected localeInternal: string | null = null;

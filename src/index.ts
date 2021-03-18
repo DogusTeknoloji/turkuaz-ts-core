@@ -15,7 +15,6 @@ export { ITurkuazApplication } from './turkuaz-application';
 import TurkuazApplication from './turkuaz-application-instance';
 import VueI18n from 'vue-i18n';
 import { Bus } from './bus';
-import { UserOptions } from './user-options';
 import TurkuazCorePluginOptions from './turkuaz-core-plugin-options';
 export { CurrencyTypes } from './currency-types';
 
@@ -48,13 +47,12 @@ export { Languages } from './languages';
 export { RootState } from './stores';
 
 export { Bus } from './bus';
-export { UserOptions }
 
-export function TurkuazCorePlugin<T extends UserOptions>(
+export function TurkuazCorePlugin(
   Vue: typeof _Vue,
-  options: TurkuazCorePluginOptions<T>,
+  options: TurkuazCorePluginOptions,
 ) {
-  TurkuazApplication.bus = new Bus<T>();
+  TurkuazApplication.bus = new Bus();
   TurkuazApplication.i18n = options.i18n;
 }
 
