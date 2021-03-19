@@ -4,7 +4,6 @@ import VueI18n from 'vue-i18n';
 import { Component, Watch } from 'vue-property-decorator';
 import { TurkuazApplication } from '.';
 import { TurkuazLocalizationService } from './turkuaz-localization-service';
-import { TurkuazMessageService } from './turkuaz-message-service';
 import { TurkuazQueueService } from './turkuaz-queue-service';
 import {
   IToastMessageManager,
@@ -17,7 +16,6 @@ import { IUserOptions, UserOptions } from './user-options';
 export class Bus extends Vue {
   public queueService = new TurkuazQueueService();
   public localizationService = new TurkuazLocalizationService();
-  public messageService = new TurkuazMessageService();
 
   public pageTitle: string = 'TurkuazGO';
   private toast = {
@@ -38,7 +36,6 @@ export class Bus extends Vue {
 
     TurkuazApplication.localizationService = this.localizationService;
     TurkuazApplication.queueService = this.queueService;
-    TurkuazApplication.messageService = this.messageService;
   }
 
   @Watch('pageTitle')

@@ -3,7 +3,6 @@ import {
   ITurkuazApplication,
   TurkuazLocalizationService,
   TurkuazQueueService,
-  TurkuazMessageService,
   Bus,
 } from '.';
 
@@ -15,7 +14,6 @@ class TurkuazApplication
   public bus: Bus | null = null;
   public localizationService: TurkuazLocalizationService | null = null;
   public queueService: TurkuazQueueService | null = null;
-  public messageService: TurkuazMessageService | null = null;
 }
 
 const turkuazApplication: TurkuazApplication = new TurkuazApplication();

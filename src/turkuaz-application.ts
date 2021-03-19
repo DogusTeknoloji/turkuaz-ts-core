@@ -2,7 +2,6 @@ import VueI18n from 'vue-i18n';
 import {
   TurkuazLocalizationService,
   TurkuazQueueService,
-  TurkuazMessageService,
   Bus,
 } from '.';
 
@@ -13,5 +12,4 @@ export interface ITurkuazApplication {
   bus: Bus | null;
   localizationService: TurkuazLocalizationService | null;
   queueService: TurkuazQueueService | null;
-  messageService: TurkuazMessageService | null;
 }

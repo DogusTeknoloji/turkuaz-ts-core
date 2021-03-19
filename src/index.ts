@@ -25,13 +25,11 @@ export * from './turkuaz-types';
 
 export { TurkuazLocalizationService } from './turkuaz-localization-service';
 export { TurkuazQueueService } from './turkuaz-queue-service';
-export { TurkuazMessageService } from './turkuaz-message-service';
 
 export {
   TurkuazQueueServiceMixin,
   TurkuazLocalizationServiceMixin,
   TurkuazEmitInputMixin,
-  TurkuazMessageServiceMixin,
 } from './mixins';
 
 export * from './kebab-case';

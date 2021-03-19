@@ -1,6 +1,5 @@
 import Vue from 'vue';
 import { Inject, Component } from 'vue-property-decorator';
-import { TurkuazApplication } from '..';
 import { TurkuazQueueService } from '../turkuaz-queue-service';
 
 @Component
