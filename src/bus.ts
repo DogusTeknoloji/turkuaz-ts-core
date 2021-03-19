@@ -56,13 +56,17 @@ export class Bus extends Vue {
     type: UserMessageType,
     subject: string | VueI18n.TranslateResult,
     message?: string | VueI18n.TranslateResult,
-    errorData?: any,
+    errorData?: Error,
   ) {
     const m: IUserMessage = {
       fireTime: new Date(),
       type,
       subject: _.isString(subject) ? subject : subject.toString(),
-      message: _.isNil(message) ? undefined : message.toString(),
+      message: _.isNil(errorData)
+        ? _.isNil(message)
+          ? undefined
+          : message.toString()
+        : errorData.message,
       errorData,
     };
     this.userMessages.unshift(m);
