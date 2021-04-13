@@ -56,7 +56,7 @@ export class Bus extends Vue {
     type: UserMessageType,
     subject: string | VueI18n.TranslateResult,
     message?: string | VueI18n.TranslateResult,
-    errorData?: Error,
+    errorData?: any,
   ) {
     const m: IUserMessage = {
       fireTime: new Date(),
@@ -66,7 +66,7 @@ export class Bus extends Vue {
         ? _.isNil(message)
           ? undefined
           : message.toString()
-        : errorData.message,
+        : errorData.error.response.data.error.innerException.message,
       errorData,
     };
     this.userMessages.unshift(m);
