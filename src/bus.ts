@@ -57,6 +57,7 @@ export class Bus extends Vue {
     subject: string | VueI18n.TranslateResult,
     message?: string | VueI18n.TranslateResult,
     errorData?: any,
+    showMessage: boolean = true
   ) {
     const m: IUserMessage = {
       fireTime: new Date(),
@@ -72,7 +73,7 @@ export class Bus extends Vue {
     this.userMessages.unshift(m);
     this.toast.color = this.getColor(type);
     this.toast.message = m;
-    this.toast.show = true;
+    this.toast.show = showMessage;
   }
 
   public getColor(type?: UserMessageType | null): string {
