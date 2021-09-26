@@ -1,3 +1,4 @@
+import _Vue from 'vue';
 import * as DebugConsole from './turkuaz-debug-console';
 import * as LocalStorage from './local-storage';
 import * as StandartValidations from './standart-validations';
@@ -12,6 +13,9 @@ export {
 
 export { ITurkuazApplication } from './turkuaz-application';
 import TurkuazApplication from './turkuaz-application-instance';
+import VueI18n from 'vue-i18n';
+import { Bus } from './bus';
+import TurkuazCorePluginOptions from './turkuaz-core-plugin-options';
 export { CurrencyTypes } from './currency-types';
 
 export { LocalizableString } from './localizable-string';
@@ -21,13 +25,11 @@ export * from './turkuaz-types';
 
 export { TurkuazLocalizationService } from './turkuaz-localization-service';
 export { TurkuazQueueService } from './turkuaz-queue-service';
-export { TurkuazMessageService } from './turkuaz-message-service';
 
 export {
   TurkuazQueueServiceMixin,
   TurkuazLocalizationServiceMixin,
   TurkuazEmitInputMixin,
-  TurkuazMessageServiceMixin,
 } from './mixins';
 
 export * from './kebab-case';
@@ -42,12 +44,25 @@ export { Languages } from './languages';
 
 export { RootState } from './stores';
 
-declare module 'vue/types/vnode' {
-  export interface VNodeData {
-    model?: {
-      callback: (v: any) => void;
-      expression: string;
-      value: any;
-    };
+export { Bus } from './bus';
+
+export function TurkuazCorePlugin(
+  Vue: typeof _Vue,
+  options: TurkuazCorePluginOptions,
+) {
+  TurkuazApplication.bus = new Bus();
+  TurkuazApplication.i18n = options.i18n;
+}
+
+declare module 'vue/types/vue' {
+  interface Vue {
+    $translate: (value: string) => string;
+  }
+}
+
+declare module 'vue/types/vue' {
+  interface VueConstructor {
+    $configs: any;
+    i18n: VueI18n;
   }
 }
