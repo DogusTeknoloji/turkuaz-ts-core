@@ -1,6 +1,6 @@
 {
   "name": "turkuaz-ts-core",
-  "version": "1.2.8",
+  "version": "1.2.9",
   "description": "",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -13,7 +13,7 @@
   "license": "ISC",
   "dependencies": {
     "@types/lodash": "4.14.165",
-    "lodash": "4.17.20",
+    "lodash": "4.17.21",
     "moment": "2.29.1",
     "vue": "2.6.12",
     "vue-class-component": "7.2.6",
