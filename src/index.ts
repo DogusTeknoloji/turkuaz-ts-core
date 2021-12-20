@@ -46,6 +46,8 @@ export { RootState } from './stores';
 
 export { Bus } from './bus';
 
+export { TimeSpan } from './time-span';
+
 export function TurkuazCorePlugin(
   Vue: typeof _Vue,
   options: TurkuazCorePluginOptions,
