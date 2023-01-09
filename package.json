@@ -1,6 +1,6 @@
 {
   "name": "turkuaz-ts-core",
-  "version": "1.4.4",
+  "version": "1.4.5",
   "description": "",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -14,18 +14,16 @@
   "dependencies": {
     "lodash": "4.17.21",
     "moment": "2.29.4",
-    "vue": "2.6.14",
+    "vue": "2.6.12",
     "vue-class-component": "7.2.6",
     "vue-i18n": "8.24.1",
     "vue-property-decorator": "9.0.2",
-    "yuya.ts.odata-client": "1.3.5"
+    "yuya.ts.odata-client": "1.3.6"
   },
   "devDependencies": {
-    "@types/lodash": "4.14.191",
-    "@typescript-eslint/eslint-plugin": "5.47.0",
-    "@typescript-eslint/parser": "5.47.0",
-    "eslint": "8.30.0",
+    "@types/lodash": "4.14.165",
     "rimraf": "3.0.2",
-    "typescript": "4.5.5"
+    "tslint": "6.1.3",
+    "typescript": "4.2.3"
   }
 }
