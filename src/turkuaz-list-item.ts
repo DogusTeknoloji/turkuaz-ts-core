@@ -3,6 +3,7 @@ import { ODataResponse } from './turkuaz-types';
 import { TurkuazQueueService } from './turkuaz-queue-service';
 import { TranslateResult } from 'vue-i18n';
 import { LocalizableString } from './localizable-string';
+import HttpResponse from 'yuya.ts.odata-client/dist/libs/http-response';
 
 export class TurkuazListItem<T = string> {
   public static fillByOData: (
@@ -41,10 +42,10 @@ TurkuazListItem.fillByOData = (
   }
 
   query.q()
-    .then((response: ODataResponse<TurkuazListItem>) => {
-      if (response.value) {
+    .then((response: HttpResponse<ODataResponse<TurkuazListItem>>) => {
+      if (response.data.value) {
         refResult.length = 0;
-        response.value.forEach((item: any) => refResult.push({
+        response.data.value.forEach((item: any) => refResult.push({
           value: item[valueFieldName],
           text: item[textFieldName],
         }));
