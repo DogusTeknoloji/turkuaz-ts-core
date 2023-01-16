@@ -1,9 +1,8 @@
-import { ODataQuery } from 'yuya.ts.odata-client';
+import { HttpResponse, ODataQuery } from 'yuya.ts.odata-client';
 import { ODataResponse } from './turkuaz-types';
 import { TurkuazQueueService } from './turkuaz-queue-service';
 import { TranslateResult } from 'vue-i18n';
 import { LocalizableString } from './localizable-string';
-import HttpResponse from 'yuya.ts.odata-client/dist/libs/http-response';
 
 export class TurkuazListItem<T = string> {
   public static fillByOData: (

@@ -1,6 +1,6 @@
 {
   "name": "turkuaz-ts-core",
-  "version": "1.4.6",
+  "version": "1.4.7",
   "description": "",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -18,7 +18,7 @@
     "vue-class-component": "7.2.6",
     "vue-i18n": "8.24.1",
     "vue-property-decorator": "9.0.2",
-    "yuya.ts.odata-client": "1.4.1"
+    "yuya.ts.odata-client": "1.4.2"
   },
   "devDependencies": {
     "@types/lodash": "4.14.165",
