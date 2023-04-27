@@ -80,6 +80,12 @@ function getCultureName(currency: CurrencyTypes): string {
       return 'tr-TR';
     case CurrencyTypes.USD:
       return 'en-US';
+    case CurrencyTypes.DKK:
+      return 'da-DK';
+    case CurrencyTypes.EUR:
+      return 'de-DE';
+    case CurrencyTypes.AUD:
+      return 'en-AU';
     default:
       return 'tr-TR';
   }

@@ -16,7 +16,7 @@ import TurkuazApplication from './turkuaz-application-instance';
 import VueI18n from 'vue-i18n';
 import { Bus } from './bus';
 import TurkuazCorePluginOptions from './turkuaz-core-plugin-options';
-export { CurrencyTypes } from './currency-types';
+export { CurrencyTypes, numberFormats } from './currency-types';
 
 export { LocalizableString } from './localizable-string';
 
