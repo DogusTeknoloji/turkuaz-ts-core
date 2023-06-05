@@ -18,6 +18,8 @@ import { Bus } from './bus';
 import TurkuazCorePluginOptions from './turkuaz-core-plugin-options';
 export { CurrencyTypes, numberFormats } from './currency-types';
 
+export { defaultLightTheme } from './color';
+
 export { LocalizableString } from './localizable-string';
 
 export { TurkuazListItem } from './turkuaz-list-item';
