@@ -66,7 +66,7 @@ export class Bus extends Vue {
         ? _.isNil(message)
           ? undefined
           : message.toString()
-        : errorData.error.response.data.error.innerException.message,
+        : errorData.message,
       errorData,
     };
     this.userMessages.unshift(m);
