@@ -1,4 +1,4 @@
-import _ from 'lodash';
+import _, { isNil } from 'lodash';
 import Vue from 'vue';
 import VueI18n from 'vue-i18n';
 import { Component, Watch } from 'vue-property-decorator';
@@ -59,14 +59,16 @@ export class Bus extends Vue {
         errorData?: any,
     ) {
 
-        let errorMessage = "Unhandled Error";
+        let errorMessage = type === UserMessageType.Error ? "Unhandled Exception" : " ";
 
-        if (errorData.error.response.data.error && errorData.error.response.data.error.message) {
-            errorMessage = errorData.error.response.data.error.message;
-        } else if (errorData.error.response.data && errorData.error.response.data.InnerException) {
-            errorMessage = errorData.error.response.data.InnerException.Message;
-        } else if (errorData.error.response.data && errorData.error.response.data.Message) {
-            errorMessage = errorData.error.response.data.Message;
+        if (!isNil(errorData)) {
+            if (errorData!.error!.response!.data!.error && errorData.error.response.data.error.message) {
+                errorMessage = errorData.error.response.data.error.message;
+            } else if (errorData!.error!.response!.data && errorData.error.response.data.InnerException) {
+                errorMessage = errorData.error.response.data.InnerException.Message;
+            } else if (errorData!.error!.response!.data && errorData.error.response.data.Message) {
+                errorMessage = errorData.error.response.data.Message;
+            }
         }
 
         const m: IUserMessage = {
