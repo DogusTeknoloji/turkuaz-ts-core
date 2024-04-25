@@ -59,7 +59,7 @@ export class Bus extends Vue {
         errorData?: any,
     ) {
 
-        let errorMessage = type === UserMessageType.Error ? "Unhandled Exception" : " ";
+        let errorMessage = undefined;
 
         if (!isNil(errorData)) {
             if (errorData!.error!.response!.data!.error && errorData.error.response.data.error.message) {
@@ -75,7 +75,7 @@ export class Bus extends Vue {
             fireTime: new Date(),
             type,
             subject: _.isString(subject) ? subject : subject.toString(),
-            message: errorMessage,
+            message: _.isUndefined(errorMessage) ? message!.toString() : errorMessage,
             errorData,
         };
         this.userMessages.unshift(m);
