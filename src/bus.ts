@@ -1,4 +1,4 @@
-import _, { isNil } from 'lodash';
+import * as _ from 'lodash';
 import Vue from 'vue';
 import VueI18n from 'vue-i18n';
 import { Component, Watch } from 'vue-property-decorator';
@@ -11,6 +11,7 @@ import {
     UserMessageType,
 } from './turkuaz-types';
 import { IUserOptions, UserOptions } from './user-options';
+import { error } from './turkuaz-debug-console';
 
 @Component
 export class Bus extends Vue {
@@ -61,7 +62,7 @@ export class Bus extends Vue {
 
         let errorMessage = undefined;
 
-        if (!isNil(errorData)) {
+        if (!_.isNil(errorData) && !_.isNil(errorData.error)) {
             if (errorData!.error!.response!.data!.error && errorData.error.response.data.error.message) {
                 errorMessage = errorData.error.response.data.error.message;
             } else if (errorData!.error!.response!.data && errorData.error.response.data.InnerException) {
@@ -69,6 +70,11 @@ export class Bus extends Vue {
             } else if (errorData!.error!.response!.data && errorData.error.response.data.Message) {
                 errorMessage = errorData.error.response.data.Message;
             }
+        }
+
+        if(!_.isNil(errorData) && !_.isNil(errorData.response) && !_.isNil(errorData.response.data) 
+            && !_.isEmpty(errorData.response.data.Message)){
+            errorMessage = errorData.response.data.Message;
         }
 
         const m: IUserMessage = {
