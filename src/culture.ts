@@ -11,7 +11,9 @@ import { CurrencyTypes } from './currency-types';
 Vue.use(VueI18n);
 
 function returnDateWithFormat(value: any, format: string): string {
-  if (!value) { return String(); }
+  if (!value) {
+    return String();
+  }
   if (isDate(value)) {
     const v: Date = value;
     return moment(v).format(format);
@@ -28,8 +30,12 @@ export function setI18nLanguage(lang: string): string {
 }
 
 export function translate(value?: string | null): string {
-  if(value === undefined || value === null) { return String(); }
-  return value.startsWith('`') ? value.substring(1) : TurkuazApplication.i18n!.t(value).toString();
+  if (value === undefined || value === null) {
+    return String();
+  }
+  return value.startsWith('`')
+    ? value.substring(1)
+    : TurkuazApplication.i18n!.t(value).toString();
 }
 Vue.prototype.$translate = translate;
 
@@ -38,7 +44,9 @@ export function translateArray(value: any[]): string[] {
 }
 
 export function numberFormatter(value: any): string {
-  if (!value) { return String(); }
+  if (!value) {
+    return String();
+  }
   if (isNumber(value)) {
     const v: number = value;
     return v.toLocaleString(TurkuazApplication.i18n!.locale);
@@ -70,8 +78,15 @@ export function onOffFormatter(value: any): string {
     : TurkuazApplication.i18n!.t('trkz.off').toString();
 }
 
-export function currencyFormatter(value: number, currency: CurrencyTypes): string {
-  return TurkuazApplication.i18n!.n(value, 'currency', getCultureName(currency));
+export function currencyFormatter(
+  value: number,
+  currency: CurrencyTypes,
+): string {
+  return TurkuazApplication.i18n!.n(
+    value,
+    'currency',
+    getCultureName(currency),
+  );
 }
 
 function getCultureName(currency: CurrencyTypes): string {
@@ -83,7 +98,7 @@ function getCultureName(currency: CurrencyTypes): string {
     case CurrencyTypes.DKK:
       return 'da-DK';
     case CurrencyTypes.EUR:
-      return 'de-DE';
+      return 'tr-TR';
     case CurrencyTypes.AUD:
       return 'en-AU';
     default:
