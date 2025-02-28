@@ -1,6 +1,6 @@
 {
   "name": "turkuaz-ts-core",
-  "version": "1.4.18",
+  "version": "1.4.19",
   "description": "",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
