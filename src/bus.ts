@@ -79,11 +79,25 @@ export class Bus extends Vue {
       }
     }
 
-    if (_.isNil(errorMessage) && errorData!.response!.data!.Message) {
+    if (
+      _.isNil(errorMessage) &&
+      !_.isNil(errorData) &&
+      !_.isNil(errorData.response) &&
+      !_.isNil(errorData.response.data) &&
+      !_.isNil(errorData.response.data.Message) &&
+      !_.isEmpty(errorData.response.data.Message)
+    ) {
       errorMessage = errorData.response.data.Message;
     }
 
-    if (_.isNil(errorMessage) && errorData!.response!.data!.error!.message) {
+    if (
+      _.isNil(errorMessage) &&
+      !_.isNil(errorData) &&
+      !_.isNil(errorData.response) &&
+      !_.isNil(errorData.response.data) &&
+      !_.isNil(errorData.response.data.error.message) &&
+      !_.isEmpty(errorData.response.data.error.message)
+    ) {
       errorMessage = errorData.response.data.error.message;
     }
 
