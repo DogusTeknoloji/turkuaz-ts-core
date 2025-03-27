@@ -98,9 +98,11 @@ function getCultureName(currency: CurrencyTypes): string {
     case CurrencyTypes.DKK:
       return 'da-DK';
     case CurrencyTypes.EUR:
-      return 'tr-TR';
+      return 'en-IE';
     case CurrencyTypes.AUD:
       return 'en-AU';
+    case CurrencyTypes.GBP:
+      return 'en-GB';
     default:
       return 'tr-TR';
   }
