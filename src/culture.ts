@@ -103,6 +103,8 @@ function getCultureName(currency: CurrencyTypes): string {
       return 'en-AU';
     case CurrencyTypes.GBP:
       return 'en-GB';
+    case CurrencyTypes.CHF:
+      return 'ja-CH';
     default:
       return 'tr-TR';
   }
