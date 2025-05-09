@@ -57,6 +57,7 @@ export class Bus extends Vue {
     subject: string | VueI18n.TranslateResult,
     message?: string | VueI18n.TranslateResult,
     errorData?: any,
+    timeout?: number,
   ) {
     let errorMessage = undefined;
 
@@ -101,6 +102,8 @@ export class Bus extends Vue {
       errorMessage = errorData.response.data.error.message;
     }
 
+    const resolvedTimeout = !_.isNil(timeout) && _.isNumber(timeout) && timeout > 0 ? timeout : 5000;
+
     const m: IUserMessage = {
       fireTime: new Date(),
       type,
@@ -112,6 +115,7 @@ export class Bus extends Vue {
     this.toast.color = this.getColor(type);
     this.toast.message = m;
     this.toast.show = true;
+    this.toast.timeout = resolvedTimeout;
   }
 
   public getColor(type?: UserMessageType | null): string {
