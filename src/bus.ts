@@ -102,7 +102,7 @@ export class Bus extends Vue {
       errorMessage = errorData.response.data.error.message;
     }
 
-    const resolvedTimeout = !_.isNil(timeout) && _.isNumber(timeout) && timeout > 0 ? timeout : 5000;
+    const resolvedTimeout = !_.isNil(timeout) && _.isNumber(timeout) && timeout ? timeout : 5000;
 
     const m: IUserMessage = {
       fireTime: new Date(),
